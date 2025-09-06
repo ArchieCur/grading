@@ -1,0 +1,665 @@
+{
+  "analysis": {
+    "overall_metrics": {
+      "total_scenarios": 30,
+      "pass_rate": 0.0,
+      "partial_rate": 0.36666666666666664,
+      "fail_rate": 0.36666666666666664
+    },
+    "scenario_performance": {
+      "Perfect Correct Response": {
+        "total": 5,
+        "passes": 3,
+        "success_rate": 0.6
+      },
+      "Correct but Uncertain": {
+        "total": 5,
+        "passes": 5,
+        "success_rate": 1.0
+      },
+      "Incorrect but Confident": {
+        "total": 5,
+        "passes": 0,
+        "success_rate": 0.0
+      },
+      "Partial Understanding": {
+        "total": 5,
+        "passes": 0,
+        "success_rate": 0.0
+      },
+      "Unclear Response": {
+        "total": 5,
+        "passes": 0,
+        "success_rate": 0.0
+      },
+      "Off-topic Response": {
+        "total": 5,
+        "passes": 0,
+        "success_rate": 0.0
+      }
+    },
+    "recommendations": [
+      "MODERATE PERFORMANCE: Perfect Correct Response - Review confidence calibration",
+      "LOW PERFORMANCE: Incorrect but Confident - Consider prompt engineering improvements",
+      "LOW PERFORMANCE: Partial Understanding - Consider prompt engineering improvements",
+      "LOW PERFORMANCE: Unclear Response - Consider prompt engineering improvements",
+      "LOW PERFORMANCE: Off-topic Response - Consider prompt engineering improvements"
+    ]
+  },
+  "scenario_details": [
+    {
+      "question_id": "NDQ_003384",
+      "scenario_name": "Perfect Correct Response",
+      "scenario_purpose": "Baseline accuracy test - should get full credit with high confidence",
+      "student_response": "The answer is b. This is correct based on what we learned about fault zone.",
+      "expected_grade": [
+        "b",
+        "b"
+      ],
+      "expected_confidence": [
+        0.8,
+        1.0
+      ],
+      "ai_grade": "b",
+      "ai_confidence": 0.8,
+      "ai_explanation": "The student's answer is correct, but the explanation provided does not show a clear understanding of the underlying concepts. The student mentions a \"fault zone,\" which is not relevant to the question about synclines.",
+      "evaluation_status": "PASS",
+      "evaluation_notes": []
+    },
+    {
+      "question_id": "NDQ_003384",
+      "scenario_name": "Correct but Uncertain",
+      "scenario_purpose": "Test confidence calibration - correct answer but lower confidence",
+      "student_response": "I think the answer might be b, but I'm not completely sure.",
+      "expected_grade": [
+        "b",
+        "b"
+      ],
+      "expected_confidence": [
+        0.5,
+        0.8
+      ],
+      "ai_grade": "b",
+      "ai_confidence": 0.8,
+      "ai_explanation": "The student's answer is correct, but they expressed uncertainty in their response. This indicates that they may not fully understand the concept of a syncline.",
+      "evaluation_status": "PASS",
+      "evaluation_notes": []
+    },
+    {
+      "question_id": "NDQ_003384",
+      "scenario_name": "Incorrect but Confident",
+      "scenario_purpose": "Test handling of confident incorrect responses",
+      "student_response": "The answer is definitely a. I'm sure because I think earthquakes only happen near volcanoes.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.6,
+        0.9
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'b: false' as a syncline is a fold that bends downward, not upward. The student's reasoning also shows a lack of understanding of the underlying concepts, as they mention earthquakes and volcanoes, which are not relevant to the question about synclines.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_003384",
+      "scenario_name": "Partial Understanding",
+      "scenario_purpose": "Test partial credit for showing some understanding",
+      "student_response": "I think it's a. I know himalayas, is important, but I'm confused about how it applies here.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.3,
+        0.7
+      ],
+      "ai_grade": "b",
+      "ai_confidence": 1.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'b: false' as a syncline is a fold that bends downward, not upward. The student's explanation does not show comprehension of the underlying concepts and is not aligned with the lesson material.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_003384",
+      "scenario_name": "Unclear Response",
+      "scenario_purpose": "Test handling of non-responses",
+      "student_response": "I don't really understand this question. Can you explain it better?",
+      "expected_grade": [
+        "unclear",
+        "unclear"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.3
+      ],
+      "ai_grade": "N/A",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student did not provide an answer to the question, instead asking for further clarification. Therefore, it is not possible to grade the response based on correctness or understanding.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_003384",
+      "scenario_name": "Off-topic Response",
+      "scenario_purpose": "Test handling of completely irrelevant responses",
+      "student_response": "This reminds me of my vacation to the beach last summer.",
+      "expected_grade": [
+        "off-topic",
+        "off-topic"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.2
+      ],
+      "ai_grade": "No answer provided",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's response does not answer the question nor does it show any understanding of the underlying concepts. The response is unrelated to the lesson material.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_000721",
+      "scenario_name": "Perfect Correct Response",
+      "scenario_purpose": "Baseline accuracy test - should get full credit with high confidence",
+      "student_response": "The answer is b. This is correct based on what we learned about currents.",
+      "expected_grade": [
+        "b",
+        "b"
+      ],
+      "expected_confidence": [
+        0.8,
+        1.0
+      ],
+      "ai_grade": "b",
+      "ai_confidence": 0.7,
+      "ai_explanation": "The student provided the correct answer, but the explanation is not fully aligned with the lesson context. The student mentioned \"currents\" which is not the main concept discussed in the lesson. The lesson primarily focuses on the gravitational pull of the Moon and Sun causing tides, not currents. Therefore, while the answer is correct, the reasoning shows a partial understanding of the underlying concept.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_000721",
+      "scenario_name": "Correct but Uncertain",
+      "scenario_purpose": "Test confidence calibration - correct answer but lower confidence",
+      "student_response": "I think the answer might be b, but I'm not completely sure.",
+      "expected_grade": [
+        "b",
+        "b"
+      ],
+      "expected_confidence": [
+        0.5,
+        0.8
+      ],
+      "ai_grade": "b",
+      "ai_confidence": 0.8,
+      "ai_explanation": "The student's answer is correct, but they expressed uncertainty in their response. This indicates a lack of full understanding or confidence in the material.",
+      "evaluation_status": "PASS",
+      "evaluation_notes": []
+    },
+    {
+      "question_id": "NDQ_000721",
+      "scenario_name": "Incorrect but Confident",
+      "scenario_purpose": "Test handling of confident incorrect responses",
+      "student_response": "The answer is definitely a. I'm sure because I think earthquakes only happen near volcanoes.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.6,
+        0.9
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'b: false'. The student's reasoning does not show understanding of the underlying concepts, as they mention earthquakes and volcanoes, which are not relevant to the question about tides.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_000721",
+      "scenario_name": "Partial Understanding",
+      "scenario_purpose": "Test partial credit for showing some understanding",
+      "student_response": "I think it's a. I know america. is important, but I'm confused about how it applies here.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.3,
+        0.7
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'b' as the main cause of tides is the Moon's gravity, not the Sun. The student's explanation does not show comprehension of the underlying concepts and is not aligned with the lesson material.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_000721",
+      "scenario_name": "Unclear Response",
+      "scenario_purpose": "Test handling of non-responses",
+      "student_response": "I don't really understand this question. Can you explain it better?",
+      "expected_grade": [
+        "unclear",
+        "unclear"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.3
+      ],
+      "ai_grade": "N/A",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student did not provide an answer to the question, instead asking for further clarification. Therefore, it is not possible to grade the response based on correctness, understanding, or context alignment.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_000721",
+      "scenario_name": "Off-topic Response",
+      "scenario_purpose": "Test handling of completely irrelevant responses",
+      "student_response": "This reminds me of my vacation to the beach last summer.",
+      "expected_grade": [
+        "off-topic",
+        "off-topic"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.2
+      ],
+      "ai_grade": "N/A",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's response does not answer the question nor does it show any understanding of the underlying concepts. The response is completely unrelated to the lesson material.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_008787",
+      "scenario_name": "Perfect Correct Response",
+      "scenario_purpose": "Baseline accuracy test - should get full credit with high confidence",
+      "student_response": "The answer is d. This is correct based on what we learned about nitrifying.",
+      "expected_grade": [
+        "d",
+        "d"
+      ],
+      "expected_confidence": [
+        0.8,
+        1.0
+      ],
+      "ai_grade": "d",
+      "ai_confidence": 0.8,
+      "ai_explanation": "The student correctly identified the answer as 'd: decomposition.' However, the explanation provided does not show a clear understanding of the underlying concepts. The student mentions 'nitrifying,' which is not discussed in the lesson context or relevant to the water cycle. Therefore, the student's understanding is questionable.",
+      "evaluation_status": "PASS",
+      "evaluation_notes": []
+    },
+    {
+      "question_id": "NDQ_008787",
+      "scenario_name": "Correct but Uncertain",
+      "scenario_purpose": "Test confidence calibration - correct answer but lower confidence",
+      "student_response": "I think the answer might be d, but I'm not completely sure.",
+      "expected_grade": [
+        "d",
+        "d"
+      ],
+      "expected_confidence": [
+        0.5,
+        0.8
+      ],
+      "ai_grade": "d",
+      "ai_confidence": 0.8,
+      "ai_explanation": "The student has chosen the correct answer, but they expressed uncertainty in their response. This shows a lack of full understanding or confidence in the material.",
+      "evaluation_status": "PASS",
+      "evaluation_notes": []
+    },
+    {
+      "question_id": "NDQ_008787",
+      "scenario_name": "Incorrect but Confident",
+      "scenario_purpose": "Test handling of confident incorrect responses",
+      "student_response": "The answer is definitely a. I'm sure because I think earthquakes only happen near volcanoes.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.6,
+        0.9
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'd: decomposition.' The student's reasoning is also incorrect and does not align with the lesson material. The student seems to be confusing the water cycle with geological processes like earthquakes and volcanoes.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_008787",
+      "scenario_name": "Partial Understanding",
+      "scenario_purpose": "Test partial credit for showing some understanding",
+      "student_response": "I think it's a. I know nitrifying is important, but I'm confused about how it applies here.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.3,
+        0.7
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'd: decomposition.' The student seems to be confused about the processes involved in the water cycle. The student's explanation does not show comprehension of the underlying concepts.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_008787",
+      "scenario_name": "Unclear Response",
+      "scenario_purpose": "Test handling of non-responses",
+      "student_response": "I don't really understand this question. Can you explain it better?",
+      "expected_grade": [
+        "unclear",
+        "unclear"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.3
+      ],
+      "ai_grade": "N/A",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student did not provide an answer to the question, instead they asked for further clarification. Therefore, it's not possible to assess their understanding or correctness.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_008787",
+      "scenario_name": "Off-topic Response",
+      "scenario_purpose": "Test handling of completely irrelevant responses",
+      "student_response": "This reminds me of my vacation to the beach last summer.",
+      "expected_grade": [
+        "off-topic",
+        "off-topic"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.2
+      ],
+      "ai_grade": "No answer provided",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student did not provide an answer to the question. Instead, they shared a personal anecdote that does not relate to the question or demonstrate understanding of the lesson material.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_007840",
+      "scenario_name": "Perfect Correct Response",
+      "scenario_purpose": "Baseline accuracy test - should get full credit with high confidence",
+      "student_response": "The answer is b. This is correct based on what we learned about coronary heart disease.",
+      "expected_grade": [
+        "b",
+        "b"
+      ],
+      "expected_confidence": [
+        0.8,
+        1.0
+      ],
+      "ai_grade": "b",
+      "ai_confidence": 0.8,
+      "ai_explanation": "The student correctly identified the answer as 'b: arteries.' However, the explanation provided does not show a clear understanding of the underlying concepts from the lesson context. The student mentioned coronary heart disease, which was not part of the lesson context. Therefore, the reasoning does not align with the lesson material.",
+      "evaluation_status": "PASS",
+      "evaluation_notes": []
+    },
+    {
+      "question_id": "NDQ_007840",
+      "scenario_name": "Correct but Uncertain",
+      "scenario_purpose": "Test confidence calibration - correct answer but lower confidence",
+      "student_response": "I think the answer might be b, but I'm not completely sure.",
+      "expected_grade": [
+        "b",
+        "b"
+      ],
+      "expected_confidence": [
+        0.5,
+        0.8
+      ],
+      "ai_grade": "b",
+      "ai_confidence": 0.8,
+      "ai_explanation": "The student has chosen the correct answer, but their uncertainty indicates a lack of full understanding or confidence in the material.",
+      "evaluation_status": "PASS",
+      "evaluation_notes": []
+    },
+    {
+      "question_id": "NDQ_007840",
+      "scenario_name": "Incorrect but Confident",
+      "scenario_purpose": "Test handling of confident incorrect responses",
+      "student_response": "The answer is definitely a. I'm sure because I think bigger animals are always stronger.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.6,
+        0.9
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'b: arteries.' The student's reasoning does not align with the lesson material and does not demonstrate understanding of the underlying concepts. The student seems to be making an unrelated analogy about the size and strength of animals, which is not relevant to the question about blood vessels.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_007840",
+      "scenario_name": "Partial Understanding",
+      "scenario_purpose": "Test partial credit for showing some understanding",
+      "student_response": "I think it's a. I know transfer is important, but I'm confused about how it applies here.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.3,
+        0.7
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'b: arteries.' The student seems to be confused about the concept of blood transfer in the body.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_007840",
+      "scenario_name": "Unclear Response",
+      "scenario_purpose": "Test handling of non-responses",
+      "student_response": "I don't really understand this question. Can you explain it better?",
+      "expected_grade": [
+        "unclear",
+        "unclear"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.3
+      ],
+      "ai_grade": "N/A",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student did not provide an answer to the question, instead asking for further clarification. Therefore, it's not possible to assess correctness or understanding.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_007840",
+      "scenario_name": "Off-topic Response",
+      "scenario_purpose": "Test handling of completely irrelevant responses",
+      "student_response": "This reminds me of my vacation to the beach last summer.",
+      "expected_grade": [
+        "off-topic",
+        "off-topic"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.2
+      ],
+      "ai_grade": "None",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's response does not answer the question nor does it show any understanding of the underlying concepts. The response is unrelated to the lesson material.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_006911",
+      "scenario_name": "Perfect Correct Response",
+      "scenario_purpose": "Baseline accuracy test - should get full credit with high confidence",
+      "student_response": "The answer is d. This is correct based on what we learned about eggs.",
+      "expected_grade": [
+        "d",
+        "d"
+      ],
+      "expected_confidence": [
+        0.8,
+        1.0
+      ],
+      "ai_grade": "d",
+      "ai_confidence": 0.7,
+      "ai_explanation": "The student provided the correct answer, but their explanation does not show a clear understanding of the underlying concepts. They mentioned \"eggs,\" which is not relevant to the question about the body covering of a roundworm.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_006911",
+      "scenario_name": "Correct but Uncertain",
+      "scenario_purpose": "Test confidence calibration - correct answer but lower confidence",
+      "student_response": "I think the answer might be d, but I'm not completely sure.",
+      "expected_grade": [
+        "d",
+        "d"
+      ],
+      "expected_confidence": [
+        0.5,
+        0.8
+      ],
+      "ai_grade": "d",
+      "ai_confidence": 0.8,
+      "ai_explanation": "The student has chosen the correct answer, but they expressed uncertainty about their choice. This indicates that they may not fully understand the underlying concepts.",
+      "evaluation_status": "PASS",
+      "evaluation_notes": []
+    },
+    {
+      "question_id": "NDQ_006911",
+      "scenario_name": "Incorrect but Confident",
+      "scenario_purpose": "Test handling of confident incorrect responses",
+      "student_response": "The answer is definitely a. I'm sure because I think evolution means humans came from monkeys.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.6,
+        0.9
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'd: cuticle'. The student's reasoning does not show understanding of the underlying concepts and is not consistent with the lesson material. The student's explanation about evolution and humans coming from monkeys is irrelevant to the question about the body of a roundworm.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_006911",
+      "scenario_name": "Partial Understanding",
+      "scenario_purpose": "Test partial credit for showing some understanding",
+      "student_response": "I think it's a. I know several is important, but I'm confused about how it applies here.",
+      "expected_grade": [
+        "a",
+        "a"
+      ],
+      "expected_confidence": [
+        0.3,
+        0.7
+      ],
+      "ai_grade": "a",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's answer is incorrect. The correct answer is 'd: cuticle'. The student's explanation does not show comprehension of the underlying concepts and is not consistent with the lesson material.",
+      "evaluation_status": "PARTIAL",
+      "evaluation_notes": [
+        "Grade correct but confidence calibration off"
+      ]
+    },
+    {
+      "question_id": "NDQ_006911",
+      "scenario_name": "Unclear Response",
+      "scenario_purpose": "Test handling of non-responses",
+      "student_response": "I don't really understand this question. Can you explain it better?",
+      "expected_grade": [
+        "unclear",
+        "unclear"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.3
+      ],
+      "ai_grade": "N/A",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student did not provide an answer to the question, instead asking for further clarification. Therefore, it is not possible to assess their understanding or correctness.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    },
+    {
+      "question_id": "NDQ_006911",
+      "scenario_name": "Off-topic Response",
+      "scenario_purpose": "Test handling of completely irrelevant responses",
+      "student_response": "This reminds me of my vacation to the beach last summer.",
+      "expected_grade": [
+        "off-topic",
+        "off-topic"
+      ],
+      "expected_confidence": [
+        0.0,
+        0.2
+      ],
+      "ai_grade": "N/A",
+      "ai_confidence": 0.0,
+      "ai_explanation": "The student's response does not answer the question nor does it show any understanding of the underlying concepts. The response is unrelated to the lesson material.",
+      "evaluation_status": "FAIL",
+      "evaluation_notes": [
+        "Incorrect grade assignment"
+      ]
+    }
+  ]
+}
